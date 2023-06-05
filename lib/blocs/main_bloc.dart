@@ -14,8 +14,8 @@ class MainBloc {
   void nextState() {
     final currentState = stateSubject.value;
     final nextState = MainPageState.values[
-        MainPageState.values.indexOf(currentState) +
-            1 % MainPageState.values.length];
+        (MainPageState.values.indexOf(currentState) + 1) %
+            MainPageState.values.length];
     stateSubject.sink.add(nextState);
   }
 

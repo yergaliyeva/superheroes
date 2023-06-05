@@ -231,7 +231,7 @@ class NothingFoundWidget extends StatelessWidget {
         child: InfoWithButton(
       title: 'Nothing found',
       subtitle: 'Search for something else',
-      buttonText: 'Next state',
+      buttonText: 'Search',
       assetImage: SuperheroesImages.hulk,
       imageHeight: 112,
       imageWidth: 84,
@@ -247,7 +247,7 @@ class LoadingErrorWidget extends StatelessWidget {
         child: InfoWithButton(
       title: 'Error happened',
       subtitle: 'Please, try again',
-      buttonText: 'Next state',
+      buttonText: 'Retry',
       assetImage: SuperheroesImages.superman,
       imageHeight: 106,
       imageWidth: 126,
