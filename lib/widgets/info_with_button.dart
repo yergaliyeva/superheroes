@@ -3,6 +3,7 @@ import 'package:superheroes/resources/superheroes_colors.dart';
 import 'package:superheroes/widgets/%20action_button.dart';
 
 class InfoWithButton extends StatelessWidget {
+  final VoidCallback onTap;
   final String title;
   final String subtitle;
   final String buttonText;
@@ -18,7 +19,8 @@ class InfoWithButton extends StatelessWidget {
       required this.assetImage,
       required this.imageHeight,
       required this.imageWidth,
-      required this.imageTopPadding});
+      required this.imageTopPadding,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,10 @@ class InfoWithButton extends StatelessWidget {
               color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 30),
-        ActionButton(text: buttonText, onTap: () {})
+        ActionButton(
+          text: buttonText,
+          onTap: onTap,
+        )
       ],
     );
   }
