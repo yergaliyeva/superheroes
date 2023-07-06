@@ -24,12 +24,12 @@ class SuperheroBloc {
     requestSubscription = request().asStream().listen((superhero) {
       superheroSubject.add(superhero);
     }, onError: (error, stackTrace) {
-      print('Error happened in requestSuperhero');
+      print('Error happened in requestSuperhero: $error, $stackTrace');
     });
   }
 
   Future<Superhero> request() async {
-    final token = dotenv.env["SUPERHEROTOKEN"];
+    final token = dotenv.env["SUPERHERO_TOKEN"];
     final response = await (client ??= http.Client()).get(
       Uri.parse('https://superheroapi.com/api/$token/$id'),
     );
